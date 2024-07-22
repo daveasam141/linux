@@ -1,0 +1,70 @@
+### To add user 
+adduser (username)
+
+### To remove user
+rm (username)
+
+### To remove directory 
+rmdir (directoryname)
+
+### To add a group 
+groupadd (groupname)
+
+### To add a user to a group 
+usermod -aG (groupname) (username)
+
+### To delete a user 
+deluser (username)
+
+### To change ownership of a directory 
+chown -R (newowner) (pathofdirectorywhichownerisbeingchanged)
+
+### To change owner of a directory and group 
+chown -R (newowner):(ngroupbeingchangedto) (pathofdirectorywhichownerisbeingchanged)
+
+### To add a user on linux 
+useradd (username)
+
+### To add user password 
+passwd (username) then enter password when prompted 
+
+### Command to find out what groups a user is in 
+groups (username)
+
+### To switch to a user
+su - (username)
+
+### To check for package updates 
+sudo yum check-update
+
+### To exit out of a user that is not root user 
+exit 
+
+### To modify a user
+usermod 
+
+### To add a user to the sudoers group which allows them to run root commands and goves elevated privileges 
+usermod -aG wheel (username) wheel is the sudousers group on redhat 
+
+### To look for a specific group on the system 
+cat /etc/group | grep wheel (specific group you're looking for) You don't need the | grep part if you want to see all groups 
+
+### To remove a sudo user
+gpasswd -d (username) (group to remove them from in this case it would be "wheel")
+
+### To create a user with no login shell 
+sudo useradd -s /sbin/nologin {username}
+
+### To disable shell for existing user (you can use either one)
+sudo chsh -s /sbin/nologin {username}
+sudo usermod {username} -s /sbin/nologin
+
+### To list users on a linux system 
+cat /etc/passwd
+
+### To login as root on ec2 withut password verification 
+sudo su -
+
+### To list disks 
+lsblk 
+

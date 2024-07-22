@@ -1,0 +1,7 @@
+### To create a script file 
+create a file with .sh  " touch (filename).sh 
+vi into the file and insert script contents and save 
+make the file executable by adding permission: chmod +x (filename)
+
+### To run the script 
+./(scriptfilename)

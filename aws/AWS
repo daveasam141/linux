@@ -1,0 +1,47 @@
+### To login to AWS instance 
+ssh -i "ssh key file" ec2-user@ec2-3-138-118-214.us-east-2.compute.amazonaws.com
+ssh -i (pathtosshjkeyfile) ec2-user@ 18.116.51.87(IP may change)
+
+### To start instance
+aws ec2 start-instances --instance-id (instanceid)
+
+### To stop instance 
+aws ec2 stop-instances --instance-id (instanceid)
+
+### If login does not work 
+change key permission to 400 using: chmod 400 (The key file)
+Move the key to your home directory for easier access 
+
+### To describe instance (This is a script.Run this from the local machine before logging into remote)
+aws ec2 describe-instances --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,Name:Tags[?Key=='Name']|[0].Value,Status:State.Name,ElasticIPAddress:ElasticIpAddress,InstanceID:InstanceId,InstanceType:InstanceType,SubnetID:SubnetId,VPCID:VpcId}" --output table | grep -v terminated 
+
+### To see layout of filesystem
+df -hP
+
+### configuring devbox
+first install brew and update 
+then run this: brew install terraform ansible git eksctl kubectl jq argocd
+
+### To set up an alias 
+
+### Creating s3 bucket
+aws s3 mb s3://(bucket name)
+aws s3 ls 
+
+### To check aws integration(make sure it's working effectively)
+aws s3 ls (should able to show created buckets or run without errror)
+
+### To check aws config file 
+~/.aws/config 
+
+### How to check awscli version 
+aws --version
+
+###aws config file
+~/.aws/config
+
+### To check aws credentials file 
+cat ~/.aws/credentials
+
+
+

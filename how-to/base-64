@@ -1,0 +1,2 @@
+### To decode base64 on comand line 
+echo QWxhZGRpbjpvcGVuIHNlc2FtZQ== | base64 --decode
