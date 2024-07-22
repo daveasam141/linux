@@ -1,0 +1,12 @@
+#### To setup alias 
+vi ~/.zshrc 
+
+### Insert alias into .zshrc
+alias (aliasname)="what the command is" 
+ex: alias tfip="terraform init && terraform fmt && terraform validate && terraform plan"
+alias tfa="terraform fmt && terraform validate && terraform apply -auto-approve"
+### to apply the change
+. ~/.zshrc
+
+### Creating alias for listing instances
+alias list-instance="aws ec2 describe-instances --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,Name:Tags[?Key=='Name']|[0].Value,Status:State.Name,ElasticIPAddress:ElasticIpAddress,InstanceID:InstanceId,InstanceType:InstanceType,SubnetID:SubnetId,VPCID:VpcId}" --output table | grep -v terminated"
